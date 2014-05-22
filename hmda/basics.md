@@ -8,43 +8,65 @@ nav: basics
 
 HMDA is a GET API that lives at ```https://api.consumerfinance.gov/data/hmda```.
 
-- You can query an entire **dataset**.
-- You can query dataset **slices**, which are pre-loaded views we think are interesting.
+- You can query the entire **dataset**.
+- You can query **slices**, which are pre-loaded views of data we think are interesting.
 - You can query **concepts**, which describe types of information found in the dataset.
 
 ##### Datasets
-The endpoint for querying all data begins with ```/data/```. 
+The endpoint for querying all data begins with ```/data/```.  
+
+<a href="console/#!/data/getDataset_get_1" class="action-arrow"> Try it out <i class="icon-right"> </i></a>
+
 
 | Endpoint | What it does |
 | ------------- | -------------|
 | ```/data/{dataset-name}``` | Gives all information about a dataset 
-| [```/data/hmda```](https://api.consumerfinance.gov/data/hmda) | Gives mortgage data from 2007-2012.
-
-<a href="console/#!/data/getDataset_get_1" class="action-arrow">Try it out <i class="icon-right"> </i></a>
+| [```/data/hmda```](https://api.consumerfinance.gov/data/hmda) | Gives mortgage lending data from 2007-2012.
 
 ##### Concepts
-Concepts are analogous to variables, or column headers in a spreadsheet. Concepts have properties, which describe all the possible values. You can also specify concepts in any of the supported file formats like so: ```/data/{dataset-name}/{contept-name.extension}```. 
+The endpoint for querying a concept looks like ```/data/hmda/{concept-name}```.  
 
-<a href="console/#!/hmda/getConceptHmda_get_1" class="action-arrow">Try it out <i class="icon-right"> </i></a>
+<a href="console/#!/hmda/getConceptHmda_get_1" class="action-arrow"> See the list of all concepts <i class="icon-right"> </i></a>
+
+| Endpoint | What it does |
+| ------------- | -------------|
+| [```/data/hmda/{concept-name}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups) | Defines a type of information in the dataset and its possible values.
+| [```/data/hmda/{concept-name.extension}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | Gives you the information in JSON, JSONP, or XML.
+
 
 ##### Slices
-Think of slices as tables in a relational database. Every dataset has many slices representing different views of it, which you can use to <a href="queries.html">construct advanced queries</a>. The endpoint for
-every slice is ```/data/{dataset-name}/{slice-name}```. 
+The endpoint for every slice is ```/data/hmda/{slice-name}```. 
 
-You can even request a slice in HTML, XML, JSON, JSONP, or CSV. Just append the filename extension to the endpoint like so:
-```/data/{dataset-name}/{slice-name.extension}```. 
+<a href="console/#!/hmda/querySliceHmda_get_2" class="action-arrow"> See the current slices <i class="icon-right"> </i></a>
 
-<a href="console/#!/hmda/querySliceHmda_get_2" class="action-arrow"> Try it out <i class="icon-right"> </i></a>
 
-##### Putting it all together
-Every year, the Federal Reserve finds interesting trends in HMDA data and publishes them in a report. Let's say you want to replicate some of their [2012 highlights](http://www.consumerfinance.gov/hmda/learn-more#highlights) in JSON. 
+| Endpoint | What it does |
+| ------------- | -------------|
+| [```/data/hmda/{slice-name}```](https://api.consumerfinance.gov/data/hmda/slice) | Gives information about a concept and describes its possible valaues
+| [```/data/hmda/{slice-name.extension}```](https://api.consumerfinance.gov/data/hmda/concept/as_of_year.json) | Gives you the information in JSON, JSONP, or XML.
 
-To compare refinances and home purchases in 2012, you would send the following query to the API:
+### Putting it all together
+Try out the following examples and look through the results. We have included links to preview the data [in a more human-friendly format](http://consumerfinance.gov/hmda/explore).
+
+##### How many people have bought a house in your neighborhood?
+Fill in your census tract:
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012&amp;state_code-1=11&amp;county_code-1=001&amp;census_tract_number-1={YOUR CENSUS TRACT}&amp;property_type=1,2&amp;owner_occupancy=1&amp;action_taken=1&amp;loan_purpose=1&amp;lien_status=1</pre>
+<a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;" class="action-arrow">Find out as a robot <i class="icon-right"> </i></a> or <a href="http://www.consumerfinance.gov/hmda/explore#!/as_of_year=2012&amp;state_code-1=11&amp;property_type=1,2&amp;wner_occupancy=1&amp;action_taken=1&amp;loan_purpose=1&amp;lien_status=1&amp;section=filters" class="action-arrow">Find out as a human <i class="icon-right"> </i></a>
+
+
+##### Change in number of new homebuyers in DC from 2010-2012
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012,2011,2010&amp;state_code=11&amp;property_type=1,2&amp;owner_occupancy=1&amp;lien_status=1&amp;action_taken=1&amp;select=state_name,county_name,as_of_year,count</pre>
+<a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012,2011,2010&amp;state_code=11&amp;property_type=1,2&amp;owner_occupancy=1&amp;lien_status=1&amp;action_taken=1&amp;select=state_name,county_name,as_of_year,count&amp;" class="action-arrow">Find out as a robot <i class="icon-right"> </i></a> or <a href="http://www.consumerfinance.gov/hmda/explore#!/as_of_year=2012,2011,2010&amp;state_code=11&amp;property_type=1,2&amp;owner_occupancy=1&amp;lien_status=1&amp;action_taken=1&amp;select=state_name,county_name,as_of_year,count&amp;" class="action-arrow">Find out as a human <i class="icon-right"> </i></a>
+
+##### Compare refinances and home purchases in 2012 across America
 <pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary</pre>
-<a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary" class="action-arrow"> Try it out <i class="icon-right"> </i></a>
+<a class="action-arrow" href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary">Find out as a robot <i class="icon-right"> </i></a> or <a class="action-arrow" href="http://www.consumerfinance.gov/hmda/explore.html#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary">Find out as a human <i class="icon-right"> </i></a>
 
-To see changes in the FHA loan market for 2012, you would send the following query to the API:
-<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/lien_status=1&amp;loan_purpose=1&amp;action_taken=1&amp;select=as_of_year,loan_type_name,count&amp;section=summary</pre>
-<a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/lien_status=1&amp;loan_purpose=1&amp;action_taken=1&amp;select=as_of_year,loan_type_name,count&amp;section=summary" class="action-arrow"> Try it out <i class="icon-right"> </i></a>
+##### The most common reason people like you got rejected in 2012
+Fill in your stats and find out:
+
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012&amp;msamd-1={YOUR METRO AREA}&amp;property_type=1&amp;owner_occupancy=1&amp;loan_purpose=1&amp;lien_status=1&amp;applicant_sex={SEX}&amp;applicant_race_1={RACE}&amp;applicant_ethnicity={ETHNICITY}&amp;applicant_income_000s-min&gt;{MIN INCOME}&amp;applicant_income_000s-max&lt;{MAX INCOME}&amp;select=denial_reason_name_1,count&amp;section=summary</pre>
+<a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012&amp;msamd-1={YOUR METRO AREA}&amp;property_type=1&amp;owner_occupancy=1&amp;loan_purpose=1&amp;lien_status=1&amp;applicant_sex={SEX}&amp;applicant_race_1={RACE}&amp;applicant_ethnicity={ETHNICITY}&amp;applicant_income_000s-min&gt;{MIN INCOME}&amp;applicant_income_000s-max&lt;{MAX INCOME}&amp;select=denial_reason_name_1,count&amp;section=summary" class="action-arrow">Find out as a robot <i class="icon-right"> </i></a> or <a href="http://www.consumerfinance.gov/hmda/explore.html#!/as_of_year=2012&amp;property_type=1,2&amp;owner_occupancy=1&amp;action_taken=3&amp;lien_status=1&amp;select=denial_reason_name_1,count&amp;section=summary" class="action-arrow">Find out as a human <i class="icon-right"> </i></a>
+
 
 <body id="basics"></body>
