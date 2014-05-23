@@ -33,7 +33,7 @@ The endpoint for slices goes looks like ```/data/hmda/{slice-name}```.
 | Endpoint | What it does |
 | ------------- | -------------|
 | [```/data/hmda/{slice-name}```](https://api.consumerfinance.gov/data/hmda/slice) | Gives information about a concept and describes its possible valaues
-| [```/data/hmda/{slice-name.extension}```](https://api.consumerfinance.gov/data/hmda/concept/as_of_year.json) | Gives you the information in JSON, JSONP, or XML.
+| [```/data/hmda/{slice-name.extension}```](https://api.consumerfinance.gov/data/hmda/concept/as_of_year.json) | Gives you the information in JSON, JSONP, XML, HTML, or CSV.
 
 ##### Concepts
 The endpoint for querying concepts is ```/data/hmda/{concept-name}```.  
@@ -43,7 +43,7 @@ The endpoint for querying concepts is ```/data/hmda/{concept-name}```.
 | Endpoint | What it does |
 | ------------- | -------------|
 | [```/data/hmda/{concept-name}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups) | Defines a type of information in the dataset and its possible values.
-| [```/data/hmda/{concept-name.extension}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | Gives you the information in JSON, JSONP, or XML.
+| [```/data/hmda/{concept-name.extension}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | Gives you the information in JSON, JSONP, XML, HTML, or CSV.
 | [```/data/hmda/{slice-name}/{concept-name}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | If querying both slices and concepts, call slices first, then concepts.
 
 ### Putting it all together
