@@ -6,6 +6,7 @@ nav: queries
 
 ### Query Language
 
+<<<<<<< HEAD
 Our query language is based on Socrata's [SoQL language](http://dev.socrata.com/consumers/getting-started#queryingwithsoql). If you're already comfortable with the basics you can
 learn how to construct more advanced queries by familiarizing yourself with all the HMDA fields on our [field reference page](fields.html), or by using the [metadata endpoints](console/#!/hmda/getSliceMetadataHmda_get_3) on our console. Otherwise, we have organized this page into two sections to familiarize yourself:
 
@@ -18,6 +19,20 @@ for you too. This section explains the ins and outs of how to gain more insight 
 ### Querying data
 
 Use these clauses to filter through millions of records to get only the data you want in a matter of seconds. See the API in action on the [filtering data](http://consumerfinance.gov/hmda/explore.html) section of our HMDA page.
+=======
+The query language is based on Socrata's [SoQL language](http://dev.socrata.com/consumers/getting-started#queryingwithsoql). If you're already comfortable with the basics you can
+learn how to construct more advanced queries by familiarizing yourself with all the HMDA fields on the [field reference](fields.html) page, or by using the [metadata endpoints](console/#!/hmda/getSliceMetadataHmda_get_3) on the interactive console. Otherwise, we have organized this page into two sections to familiarize yourself:
+
+**Querying data** - An overview of the clauses you can use to specify what you want and do not want returned in a slice. If our API was the 
+barista at your favorite coffee shop, it could handle even the most persnickety of drink orders.  
+
+**Summarizing or aggregating data** - Once you have the data you need to work with, our API can crunch all the numbers 
+for you. This section explains the ins and outs of how to gain more insight into large and overwhelming data.
+
+### Querying data
+
+Use these clauses to filter through millions of records to get only the data you want in a matter of seconds. See the API in action on the [explore the data](http://consumerfinance.gov/hmda/explore.html) section of our HMDA page.
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 
 
 <table class="table-code">
@@ -38,7 +53,11 @@ Use these clauses to filter through millions of records to get only the data you
 </tr>
 <tr>
 <td><code>$orderBy</code></td>
+<<<<<<< HEAD
 <td>Fields to order by, separated by commas, or <code>ASC</code> and <code>DESC</code>. If not specified, the order will be consistent, but unspecified. <a href="#orderby">Learn more.</a>.</td>
+=======
+<td>Fields to order by, separated by commas, or <code>ASC</code> and <code>DESC</code>. If not specified, the order will be consistent, but unspecified. <a href="#orderby">Learn more</a>.</td>
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 </tr>
 <tr>
 <td><code>$group</code></td>
@@ -109,12 +128,20 @@ support. A ```$where``` clause is made up of one or more comparisons, joined by 
 <tr>
 <td><code>LIKE</code></td>
 <td>matches strings</td>
+<<<<<<< HEAD
 <td><code>name LIKE = "Pete%"</code> would match "Pete, "Peter," or anything that starts with "Pete"</td>
+=======
+<td><code>name LIKE "Pete%"</code> would match "Pete, "Peter," or anything that starts with "Pete"</td>
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 </tr>
 <tr>
 <td><code>ILIKE</code></td>
 <td>matches case-insensitive strings</td>
+<<<<<<< HEAD
 <td><code>name ILIKE = "%rick"</code> would match "Rick" as well as "Yorick," "Harrick," or anything else with "rick" in it</td>
+=======
+<td><code>name ILIKE "%rick"</code> would match "Rick" as well as "Yorick," "Harrick," or anything else with "rick" in it</td>
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 </tr>
 <tr>
 <td><code>IS NULL</code></td>
@@ -214,12 +241,20 @@ support. A ```$where``` clause is made up of one or more comparisons, joined by 
 <tr>
 <td><code>LIKE</code></td>
 <td>matches strings</td>
+<<<<<<< HEAD
 <td><code>name LIKE = "Pete%"</code> would match "Pete, "Peter," or anything that starts with "Pete"</td>
+=======
+<td><code>name LIKE "Pete%"</code> would match "Pete, "Peter," or anything that starts with "Pete"</td>
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 </tr>
 <tr>
 <td><code>ILIKE</code></td>
 <td>matches case-insensitive strings</td>
+<<<<<<< HEAD
 <td><code>name ILIKE = "%rick"</code> would match "Rick" as well as "Yorick," "Harrick," or anything else with "rick" in it</td>
+=======
+<td><code>name ILIKE "%rick"</code> would match "Rick" as well as "Yorick," "Harrick," or anything else with "rick" in it</td>
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 </tr>
 <tr>
 <td><code>IS NULL</code></td>
@@ -352,12 +387,26 @@ this format:
 
 ```function_field_name```
 
+<<<<<<< HEAD
 ```sum_number_of_owner_occupied_units```
 
+=======
+and
+
+```sum_number_of_owner_occupied_units```
+
+
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 ##### That's everything!
 
 You're ready to start building your own queries, and bring HMDA data into your own apps and tools!
 
+<<<<<<< HEAD
 Get familiar with the information contained in the LAR on our [field reference](fields.html) page, and head on over to the [API calls](console/) page to test out your queries in our console.
 
 <body id="queries"></body>
+=======
+Get familiar with the information contained in HMDA LAR data on the [field reference](fields.html) page, and head on over to [API calls](console/) to test out your queries in the console.
+
+<body id="queries"></body>
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35

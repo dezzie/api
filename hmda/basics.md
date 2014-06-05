@@ -6,6 +6,7 @@ nav: basics
 
 ### API basics
 
+<<<<<<< HEAD
 HMDA is a GET API which supports three main operations, each designed to save you time and allow you to focus only on
 the parts of the data you need. It lives at ```https://api.consumerfinance.gov/data/hmda```.
 
@@ -42,5 +43,72 @@ To compare refinances and home purchases in 2012, you would send the following q
 To see changes in the FHA loan market for 2012, you would send the following query to the API:
 <pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/lien_status=1&amp;loan_purpose=1&amp;action_taken=1&amp;select=as_of_year,loan_type_name,count&amp;section=summary</pre>
 <a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/lien_status=1&amp;loan_purpose=1&amp;action_taken=1&amp;select=as_of_year,loan_type_name,count&amp;section=summary" class="action-arrow"> Try it out <i class="icon-right"> </i></a>
+=======
+HMDA is a GET API that lives at ```https://api.consumerfinance.gov/data/hmda```.
+
+- You can query the entire **dataset**.
+- You can query **slices**, which are pre-loaded views of data we think are interesting.
+- You can query **concepts**, which describe types of information found in the dataset.
+
+##### Datasets
+The endpoint for querying all data begins with ```/data/```.  
+
+<a href="console/#!/data/getDataset_get_1" class="action-arrow"> Try it out <i class="icon-right"> </i></a>
+
+
+| Endpoint | What it does |
+| ------------- | -------------|
+| ```/data/{dataset-name}``` | Gives all information about a dataset 
+| [```/data/hmda```](https://api.consumerfinance.gov/data/hmda) | Gives mortgage lending data from 2007-2012.
+
+
+##### Slices
+The endpoint for slices goes looks like ```/data/hmda/{slice-name}```. 
+
+<a href="console/#!/hmda/querySliceHmda_get_2" class="action-arrow"> See the current slices <i class="icon-right"> </i></a>
+
+
+| Endpoint | What it does |
+| ------------- | -------------|
+| [```/data/hmda/{slice-name}```](https://api.consumerfinance.gov/data/hmda/slice) | Gives information about a concept and describes its possible valaues
+| [```/data/hmda/{slice-name.extension}```](https://api.consumerfinance.gov/data/hmda/concept/as_of_year.json) | Gives you the information in JSON, JSONP, XML, HTML, or CSV.
+
+##### Concepts
+The endpoint for querying concepts is ```/data/hmda/{concept-name}```.  
+
+<a href="console/#!/hmda/getConceptHmda_get_1" class="action-arrow"> See the list of all concepts <i class="icon-right"> </i></a>
+
+| Endpoint | What it does |
+| ------------- | -------------|
+| [```/data/hmda/{concept-name}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups) | Defines a type of information in the dataset and its possible values.
+| [```/data/hmda/{concept-name.extension}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | Gives you the information in JSON, JSONP, XML, HTML, or CSV.
+| [```/data/hmda/{slice-name}/{concept-name}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | If querying both slices and concepts, call slices first, then concepts.
+
+### Putting it all together
+Fill in the blanks and try these queries out:
+
+##### How many people have bought a house in your neighborhood?
+Fill in your census tract:
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012&amp;state_code-1=11&amp;county_code-1=001&amp;census_tract_number-1={YOUR CENSUS TRACT}&amp;property_type=1,2&amp;owner_occupancy=1&amp;action_taken=1&amp;loan_purpose=1&amp;lien_status=1</pre>
+
+##### The most common loan denial reason for people like you
+Fill in your stats and find out:
+
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012&amp;msamd-1={YOUR METRO AREA}&amp;property_type=1&amp;owner_occupancy=1&amp;loan_purpose=1&amp;lien_status=1&amp;applicant_sex={SEX}&amp;applicant_race_1={RACE}&amp;applicant_ethnicity={ETHNICITY}&amp;applicant_income_000s-min&gt;{MIN INCOME}&amp;applicant_income_000s-max&lt;{MAX INCOME}&amp;select=denial_reason_name_1,count&amp;section=summary</pre>
+
+
+##### Change in number of new homebuyers in DC from 2010-2012
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012,2011,2010&amp;state_code=11&amp;property_type=1,2&amp;owner_occupancy=1&amp;lien_status=1&amp;action_taken=1&amp;select=state_name,county_name,as_of_year,count</pre>
+<a href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.json?#!/as_of_year=2012,2011,2010&amp;state_code=11&amp;property_type=1,2&amp;owner_occupancy=1&amp;lien_status=1&amp;action_taken=1&amp;select=state_name,county_name,as_of_year,count&amp;" class="action-arrow">Call it <i class="icon-right"> </i></a> or <a href="http://www.consumerfinance.gov/hmda/explore#!/as_of_year=2012,2011,2010&amp;state_code=11&amp;property_type=1,2&amp;owner_occupancy=1&amp;lien_status=1&amp;action_taken=1&amp;select=state_name,county_name,as_of_year,count&amp;" class="action-arrow">Preview the data<i class="icon-right"> </i></a>
+
+##### Compare refinances and home purchases in 2012 across America
+<pre>https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.xml?#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary</pre>
+<a class="action-arrow" href="https://api.consumerfinance.gov/data/hmda/slice/hmda_lar.xml?#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary">Call it <i class="icon-right"> </i></a> or <a class="action-arrow" href="http://www.consumerfinance.gov/hmda/explore.html#!/property_type=1,2&amp;action_taken=1&amp;select=as_of_year,loan_purpose_name,count&amp;section=summary">Preview the data <i class="icon-right"> </i></a>
+
+### Previewing your query in plain language using HMDA Explore
+You do not always have to assess your results in machine format. Substitute the API's location: ```https://api.consumerfinance.gov/data/hmda/slice/{any-slices}```
+
+with that of the [HMDA Explore](http://consumerfinance.gov/hmda/explore) page at ```http://consumerfinance.gov/hmda/explore#!/``` to preview your results in neat and tidy tables.
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 
 <body id="basics"></body>

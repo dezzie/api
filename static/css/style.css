@@ -1171,4 +1171,8 @@ del {
 /* custom class as .hidden is already used in the guide */
 .expandable-hidden {
   display: none;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35

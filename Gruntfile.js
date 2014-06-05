@@ -30,4 +30,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['uglify', 'exec:build']);
+<<<<<<< HEAD
 }; 
+=======
+}; 
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35

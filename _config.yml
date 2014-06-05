@@ -3,4 +3,8 @@ markdown: maruku
 pygments: true
 safe: true
 baseurl: /api/
+<<<<<<< HEAD
 exclude: ['.ruby-version', 'node_modules', 'package.json', 'bower.json']
+=======
+exclude: ['.ruby-version', 'node_modules', 'package.json', 'bower.json']
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
