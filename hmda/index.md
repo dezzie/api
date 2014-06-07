@@ -4,8 +4,11 @@ layout: default
 
 ---
 
-### Overview
+### HAI
 
+&#x20;<iframe width="640" height="360" src="//www.youtube.com/embed/wR9Tsdqgmuk" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+
+### Overview
 
 Each year thousands of banks and other financial institutions report data about mortgages to the public as part of the [Home Mortgage Disclosure Act (HMDA)](http://www.consumerfinance.gov/hmda/#video). This data is important because:
 
