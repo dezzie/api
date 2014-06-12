@@ -4,49 +4,30 @@ layout: default
 
 ---
 
-### HAI
+## The Home Mortgage Disclosure Act
 
-&#x20;<iframe width="640" height="360" src="//www.youtube.com/embed/wR9Tsdqgmuk" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+In 2012, there were 18.7 million HMDA records from 7,400 financial institutions. This data is a view of the mortgage market, an important part of the American economy.
 
-### Overview
+CFPB is serving every year of this data since 2007, and we think that you could build something really cool with it. 
 
-Each year thousands of banks and other financial institutions report data about mortgages to the public as part of the [Home Mortgage Disclosure Act (HMDA)](http://www.consumerfinance.gov/hmda/#video). This data is important because:
 
-- It helps show whether lenders are serving the housing needs of their communities;
-- It gives public officials insight that helps them make informed decisions about policies; and
-- It sheds light on lending patterns that could be discriminatory
-
-The CFPB provides every year of the Loan Application Register (LAR) data since 2007. That adds up to about 15 to 20 million records every year, and we think that you could build something really cool with it. 
-
-Look we already made something with it! cf.gov/hmda is something you could make!
+&#x20;<iframe width="580" height="356" src="//www.youtube.com/embed/wR9Tsdqgmuk" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
 
 ##### Get started
-We built the API to be as self-documenting as possible, but if you find yourself overwhelmed, we organized this site into four major areas.
+HMDA API is self-documenting. This site is designed to get the developer community acquainted with the information contained in HMDA data itself.
 
-- [API basics](basics.html) introduces you to the operations offered by the API.
-- [API calls](console/) gives you a hands-on experience of those operations with an interactive console.
-- [Query language](queries.html) contains a comprehensive listing of all the API's types, functions, and enumerations.
-- [Field reference](fields.html) lists and describes the type of information reported in the LAR.
-
-##### The HMDA API and Qu
-
-This is the CFPB's first dataset published using [Qu](http://cfpb.github.io/qu/), a framework for data APIs that is still under development. Check out [Qu docs](http://cfpb.github.io/qu/index.html) to learn how this API was built.
+- [API basics](basics.html) explains the API's operations using real-data examples.
+- [API calls](console/) gives hands-on experience with the dataset using an interactive console.
+- [API fields](fields.html) lists and describes the type of information found in this dataset.
 
 
-<ul class="repo-list">
-  <li class="list-icon">
-    <p class="image-wrap">
-      <img src="../static/img/octocat.png" width="25px" title="Github">
-    </p>
-  </li>
-  <li>
-    <a href="https://github.com/cfpb/qu">
-     <h4>Qu</h4>
-      <p>The open source framework behind HMDA API</p>
-    </a>
-  </li>
-</ul>
+##### Not a developer?
+
+Our [HMDA website](http://www.consumerfinance.gov/hmda) is a perfect example of how APIs can put public data to work in exciting, transparent new ways.
+
+
+[Explore the data](http://www.consumerfinance.gov/hmda/explore) uses this API to let you look for interesting trends and put together a custom dataset for download just using your browser–no fancy statistical software required.
+
 <body id="overview"></body>
 
-##### Not interested in an API?
- You can still get the data! Visit the [Explore](http://www.consumerfinance.gov/hmda/explore) section of our HMDA site, where you can create [custom data sets](http://consumerfinance.gov/hmda/explore.html) for download.
+

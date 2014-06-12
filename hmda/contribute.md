@@ -5,9 +5,9 @@ nav: contribute
 ---
 ### Open source contributing
 
-The HMDA API is built upon Qu, the [first government open-source project developed on GitHub](http://cfpb.github.io/qu/).
+The HMDA API is built using [Qu](http://cfpb.github.io/qu/), a framework for data APIs that is still under development.
 
-If you think you can make the API better, or just want to take a look under the hood–check out the repo and contribute to the project. Everything we release [remains in the public domain](https://github.com/cfpb/source-code-policy/blob/master/cfpb-source-code-policy.txt).
+If you want to take a look under the hood, check out [Qu docs](http://cfpb.github.io/qu/) and the main Qu repo below. Think you can make it better? [Go for it](http://www.consumerfinance.gov/blog/the-cfpbs-source-code-policy-open-and-shared/)!  
 
 
 <ul class="repo-list no-padding">
@@ -20,6 +20,20 @@ If you think you can make the API better, or just want to take a look under the 
     <a href="https://github.com/cfpb/qu">
       <h4>Qu</h4>
       <p>The open source framework behind HMDA API</p>
+    </a>
+  </li>
+</ul>
+<br>
+<ul class="repo-list no-padding">
+  <li class="list-icon">
+    <p class="image-wrap">
+      <img src="../static/img/octocat.png" width="25px" title="Github">
+    </p>
+  </li>
+  <li>
+    <a href="https://github.com/cfpb/source-code-policy/">
+      <h4>CFPB Source Code Policy</h4>
+      <p>Open and shared</p>
     </a>
   </li>
 </ul>
