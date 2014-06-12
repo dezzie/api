@@ -47,7 +47,7 @@ The endpoint for querying concepts is ```/data/hmda/{concept-name}```.
 | [```/data/hmda/{slice-name}/{concept-name}```](https://api.consumerfinance.gov/data/hmda/slice/application_groups.json) | If querying both slices and concepts, call slices first, then concepts.
 
 ### Putting it all together
-Use the [API calls](console/) page to generate the request URLs for specific pieces of information, then fill in the blanks below:
+Use [API calls](console/) to generate the request URLs for specific pieces of information, and try out these examples:
 
 ##### How many people have bought a house in your neighborhood?
 Fill in your [state](https://api.consumerfinance.gov/data/hmda/concept/state_code) and [census tract](https://ask.census.gov/faq.php?id=5000&amp;faqId=127):

@@ -16,4 +16,8 @@ $(document).ready( function() {
   }
 
   expandable();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
