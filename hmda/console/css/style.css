@@ -211,7 +211,11 @@ table {
     overflow-x: auto;
     padding: 0.125em 0.250em;
     white-space: pre;
+<<<<<<< HEAD
+    white-space: nowrap;
+=======
     white-space: no-wrap;
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
 }
 
 th {

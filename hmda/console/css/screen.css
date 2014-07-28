@@ -684,7 +684,6 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
     padding: 0;
 }
 
-
 /* hiding operations that freeze browser */
 #data_getDataset_get_1.operation.get {
     display: none;
@@ -871,8 +870,6 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
     padding: 0.125em 0.250em;
 
 }
-
-
 
 /* THESE ARE FOR POST CALLS ONLY 
 body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post {

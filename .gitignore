@@ -1,3 +1,12 @@
 _site
 _components
+<<<<<<< HEAD
 node_modules
+<<<<<<< HEAD
+
+Gemfile.lock
+=======
+=======
+node_modules
+>>>>>>> 9a10e46081224574bc5ce0462dd8e35c4e210f35
+>>>>>>> FETCH_HEAD
