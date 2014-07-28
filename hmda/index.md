@@ -6,8 +6,6 @@ layout: default
 
 ### Overview
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/wR9Tsdqgmuk" frameborder="0" allowfullscreen></iframe>
-
 Each year thousands of banks and other financial institutions report data about mortgages to the public as part of the [Home Mortgage Disclosure Act (HMDA)](http://www.consumerfinance.gov/hmda/#video). This data is important because:
 
 - It helps show whether lenders are serving the housing needs of their communities;
